@@ -45,3 +45,21 @@ async function getWeatherData() {
 
 // Run the function
 getWeatherData();
+
+document.getElementById("analyze-btn").addEventListener("click", () => {
+    if (!weatherData) return; 
+
+    const maxTemps = weatherData.temperature_2m_max;
+    
+    // Find the highest number in the array
+    const absoluteMax = Math.max(...maxTemps);
+    
+    // Find the index (position) of that highest temperature
+    const hottestIndex = maxTemps.indexOf(absoluteMax);
+    
+    // Use that same index to find the corresponding date
+    const hottestDate = weatherData.time[hottestIndex];
+
+    document.getElementById("analysis-result").innerHTML = 
+        `🔥 The hottest day this week will be ${hottestDate} with a high of ${absoluteMax}°F!`;
+});
