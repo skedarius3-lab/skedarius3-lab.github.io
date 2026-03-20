@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hometown Weather Dashboard</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+        .day-card { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 5px; }
+        button { padding: 10px; font-size: 16px; margin-bottom: 10px; cursor: pointer; }
+        #analysis-result { font-weight: bold; color: #d32f2f; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <h1>7-Day Hometown Forecast</h1>
+    <a href="index.html">⬅ Back to Home</a>
+    
+    <br><br>
+    <button id="analyze-btn">Find the Hottest Day</button>
+    <div id="analysis-result"></div>
+
+    <div id="forecast-container">
+        <p>Loading weather data...</p>
+    </div>
+
+    <script src="weather.js"></script>
+</body>
+</html>
