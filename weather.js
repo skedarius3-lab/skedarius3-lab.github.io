@@ -6,6 +6,27 @@ const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&long
 
 let weatherData = null;
 
+async function renderForecast(dailyData) {
+    const container = document.getElementById("forecast-container");
+    container.innerHTML = ""; 
+
+    const dates = dailyData.time;
+    const maxTemps = dailyData.temperature_2m_max;
+    const minTemps = dailyData.temperature_2m_min;
+
+    for (let i = 0; i < dates.length; i++) {
+        const dayDiv = document.createElement("div");
+        
+        dayDiv.innerHTML = `
+            <p><strong>Date:</strong> ${dates[i]}</p>
+            <p><strong>High:</strong> ${maxTemps[i]}°F | <strong>Low:</strong> ${minTemps[i]}°F</p>
+            <hr>
+        `;
+        
+        container.appendChild(dayDiv);
+    }
+}
+
 async function getWeatherData() {
     try {
         const response = await fetch(apiUrl);
