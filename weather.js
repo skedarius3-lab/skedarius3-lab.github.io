@@ -1,5 +1,5 @@
-const latitude = 33.196214434554875;  // Replace with YOUR city's latitude
-const longitude = -87.58710308784966; // Replace with YOUR city's longitude
+const latitude = 33.196214;  // Replace with YOUR city's latitude
+const longitude = -87.58710; // Replace with YOUR city's longitude
 
 // The API URL asking for 7 days of daily high/low temperatures in Fahrenheit
 const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&timezone=auto`;
